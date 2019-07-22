@@ -1,0 +1,24 @@
+{
+  "name": "Quick Menu Search",
+  "version": "0.0.0",
+  "description": "Quick Menu Search",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["brain.js"]
+  }],
+  "browser_action": {
+    "default_popup": "structure.html",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "manifest_version": 2
+}
