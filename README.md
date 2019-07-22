@@ -1,6 +1,6 @@
 # Quick Menu Search
 
-1) download zip file
+1) download [zip file](https://github.com/hchiam/quick-menu-search/blob/master/quick-menu-search.zip?raw=true)
 2) unzip folder
 3) chrome://extensions/
 4) Developer mode
