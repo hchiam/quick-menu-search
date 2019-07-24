@@ -30,7 +30,7 @@
   function createPalette() {
     var div = document.createElement("div");
     div.className = 'quick-search-palette';
-    div.style.cssText = 'all: initial; padding-top: 20px; position: fixed; left: 25%; top: 25vh; width: 50%; height: 50%; z-index: 9999; border: 1rem solid rgba(0, 0, 255, 0.75); background: rgba(255,255,255,0.75); color: black; overflow-y: auto; border-radius: 5px; font-family: avenir, arial, tahoma; box-shadow: inset 0 -50px 50px -55px rgba(0, 0, 0, 1);';
+    div.style.cssText = 'all: initial; padding-top: 20px; position: fixed; left: 25%; top: 25vh; width: 50%; height: 50%; z-index: 9999; border: 1rem solid rgba(0, 0, 255, 0.75); background: rgba(255,255,255,0.95); color: black; overflow-y: auto; border-radius: 5px; font-family: avenir, arial, tahoma; box-shadow: inset 0 -50px 50px -55px rgba(0, 0, 0, 1);';
     div.id = 'quick-search-palette';
 
     var button = document.createElement("button");
@@ -71,8 +71,7 @@
 
   function getMenus() {
     menus = [];
-
-    var findAnyATag = true;
+    
     var foundUrls = {};
     var openedMenu = document.querySelector("a.has-children-open");
     var collapsedMenus = document.querySelectorAll("a.has-children-closed");
@@ -82,7 +81,7 @@
         var collapsedMenu = collapsedMenus[c];
         collapsedMenu.click();
 
-        menus = findATags('', menus, foundUrls, findAnyATag);
+        menus = getATags(menus, foundUrls);
       }
 
       collapsedMenus[collapsedMenus.length - 1].click();
@@ -91,7 +90,7 @@
         openedMenu.click();
       }
     } else {
-      menus = findATags('', menus, foundUrls, findAnyATag);
+      menus = getATags(menus, foundUrls);
     }
   }
 
@@ -105,38 +104,14 @@
     var results = [];
 
     for (var m = 0; m < menus.length; m++) {
-      var content = menus[m];
-      var inText = content.toLowerCase().includes(text.toLowerCase());
-      var hasHref = content.includes("href");
-      var href = content.match(/href=\"(.+)"/);
+      var menu = menus[m];
+      var inText = menu.toLowerCase().includes(text.toLowerCase());
+      var href = menu.match(/href=\"(.+)"/);
       var isCurrentPage = (href && href[1] === window.location.href);
-      if (inText && hasHref && !isCurrentPage) {
+      if (inText && !isCurrentPage) {
         results.push(menus[m]);
       }
     }
-
-    /* KEEP THIS COMMENTED CODE FOR LATER JUST IN CASE: */
-
-    // var foundUrls = {};
-    // var openedMenu = document.querySelector("a.has-children-open");
-    // var collapsedMenus = document.querySelectorAll("a.has-children-closed");
-
-    // if (collapsedMenus) {
-    //   for (var c = 0; c < collapsedMenus.length; c++) {
-    //     var collapsedMenu = collapsedMenus[c];
-    //     collapsedMenu.click();
-
-    //     results = findATags(text, results, foundUrls);
-    //   }
-
-    //   collapsedMenus[collapsedMenus.length - 1].click();
-
-    //   if (openedMenu) {
-    //     openedMenu.click();
-    //   }
-    // } else {
-    //   results = findATags(text, results, foundUrls);
-    // }
 
     if (results.length == 0) {
       return 'No results found for: ' + text;
@@ -145,20 +120,16 @@
     return '<strong>(Hint: Tab or Shift+Tab)</strong><br/><br/>' + results.join('<br/><br/>');
   }
 
-  function findATags(text, results, foundUrls, any) {
-    var navs = document.querySelectorAll("a[href*='" + text + "']");
-    if (any) {
-      navs = document.querySelectorAll("a");
-    }
-    for (var i = 0; i < navs.length; i++) {
-      var nav = navs[i];
-      var content = nav.textContent || nav.innerText;
-      var inText = content.includes(text);
-      var inUrl = nav.href.includes(text);
-      var isNewUrl = !(nav.href in foundUrls);
-      if ((inText || inUrl) && isNewUrl) {
-        foundUrls[nav.href] = true;
-        results.push('<a href="' + nav.href + '">' + content + ' -> ' + nav.href + ' </a>');
+  function getATags(results, foundUrls) {
+    var aTags = document.querySelectorAll("a");
+    for (var i = 0; i < aTags.length; i++) {
+      var aTag = aTags[i];
+      var content = aTag.textContent || aTag.innerText;
+      var hasHref = aTag.href;
+      var isNewUrl = hasHref && !(aTag.href in foundUrls);
+      if (hasHref && isNewUrl) {
+        foundUrls[aTag.href] = true;
+        results.push('<a href="' + aTag.href + '">' + content + ' -> ' + aTag.href + ' </a>');
       }
     }
 
