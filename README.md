@@ -2,7 +2,7 @@
 
 2 options:
 
-## 1) Quick Install:
+## 1) Quick Install on Chrome:
 
 https://chrome.google.com/webstore/detail/quick-menu-search/omlablddkobaophglfkodffdmeoppabc
 
