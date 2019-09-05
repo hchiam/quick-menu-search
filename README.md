@@ -1,5 +1,13 @@
 # Quick Menu Search
 
+2 options:
+
+## 1) Quick Install:
+
+https://chrome.google.com/webstore/detail/quick-menu-search/omlablddkobaophglfkodffdmeoppabc
+
+## 2) Have Full Control Over the Code and Customize:
+
 1) download [zip file](https://github.com/hchiam/quick-menu-search/blob/master/quick-menu-search.zip?raw=true)
 2) unzip folder
 3) chrome://extensions/
