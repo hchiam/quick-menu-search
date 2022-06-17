@@ -1,4 +1,4 @@
-# Quick Menu Search
+# Quick Menu Search [![version](https://img.shields.io/github/release/hchiam/quick-menu-search)](https://github.com/hchiam/quick-menu-search/releases)
 
 2 options:
 
