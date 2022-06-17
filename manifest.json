@@ -2,7 +2,7 @@
   "name": "Quick Menu Search",
   "version": "1.0.1",
   "description": "Quick Menu Search",
-  "permissions": ["activeTab", "unlimitedStorage"],
+  "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
