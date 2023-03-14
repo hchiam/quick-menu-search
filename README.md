@@ -1,6 +1,6 @@
 # Quick Menu Search [![version](https://img.shields.io/github/release/hchiam/quick-menu-search)](https://github.com/hchiam/quick-menu-search/releases)
 
-Open a quick search of menu items: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> (or <kbd>command</kbd> + <kbd>shift</kbd> + <kbd>f</kbd>).
+Open a quick search of menu items: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> (or on Mac: <kbd>command</kbd> + <kbd>shift</kbd> + <kbd>f</kbd>).
 
 2 options:
 
