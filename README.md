@@ -1,10 +1,16 @@
 # Quick Menu Search [![version](https://img.shields.io/github/release/hchiam/quick-menu-search)](https://github.com/hchiam/quick-menu-search/releases)
 
+Open a quick search of menu items: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
+
+(or <kbd>command</kbd> + <kbd>shift</kbd> + <kbd>f</kbd>)
+
 2 options:
 
-## 1) Quick Install on Chrome
+## 1) Quick Install on Chrome or Firefox
 
-https://chrome.google.com/webstore/detail/quick-menu-search/omlablddkobaophglfkodffdmeoppabc
+Chrome extension: https://chrome.google.com/webstore/detail/quick-menu-search/omlablddkobaophglfkodffdmeoppabc
+
+Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/quick-menu-search/
 
 ## 2) Have Full Control Over the Code and Customize
 
