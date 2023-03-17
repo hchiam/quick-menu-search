@@ -82,7 +82,7 @@
     resultsContainer.className = "quick-search-palette";
     resultsContainer.id = "quick-search-palette-container";
     resultsContainer.style.cssText =
-      "float: left; width: 100%; height: 100%; padding: 0.75rem; overflow-y: auto;";
+      "float: left; width: 100%; height: 100%; padding: 0.75rem; overflow-y: auto; color: black !important;";
 
     div.appendChild(resultsContainer);
 
@@ -153,7 +153,7 @@
       if (hasHref && isNewUrl) {
         foundUrls[aTag.href] = true;
         results.push(
-          '<a href="' +
+          '<a style="color: blue !important;" href="' +
             aTag.href +
             '">' +
             content +
