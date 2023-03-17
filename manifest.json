@@ -1,6 +1,6 @@
 {
   "name": "Quick Menu Search",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Quick Menu Search",
   "permissions": ["activeTab"],
   "content_scripts": [
