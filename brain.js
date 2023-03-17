@@ -124,9 +124,12 @@
     var results = [];
 
     for (var m = 0; m < menus.length; m++) {
-      var menu = menus[m];
-      var inText = menu.toLowerCase().includes(text.toLowerCase());
-      var href = menu.match(/href=\"(.+)"/);
+      var menuText = menus[m];
+      var inText = menuText
+        .replaceAll(" ", "")
+        .toLowerCase()
+        .includes(text.replaceAll(" ", "").toLowerCase());
+      var href = menuText.match(/href=\"(.+)"/);
       var isCurrentPage = href && href[1] === window.location.href;
       if (inText && !isCurrentPage) {
         results.push(menus[m]);
