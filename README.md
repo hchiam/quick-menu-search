@@ -22,3 +22,7 @@ Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/quick-menu-search
 8. click on the extension icon
 9. hit Ctrl+Shift+F (or Esc to close)
 10. hit Tab or Shift+Tab to change focus between links
+
+## 2023 Update
+
+Version 3.0.0 uses manifest MV3, which requires at least Firefox 109.0 (January 17, 2023).

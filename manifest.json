@@ -1,6 +1,6 @@
 {
   "name": "Quick Menu Search",
-  "version": "1.2.1",
+  "version": "3.0.0",
   "description": "Quick Menu Search",
   "permissions": ["activeTab"],
   "content_scripts": [
@@ -9,7 +9,7 @@
       "js": ["brain.js"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "structure.html",
     "default_icon": {
       "128": "icon.png"
@@ -18,5 +18,10 @@
   "icons": {
     "128": "icon.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{b26c5bf1-96c5-4540-b748-c5809bdbfb26}"
+    }
+  }
 }
