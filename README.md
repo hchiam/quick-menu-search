@@ -25,4 +25,4 @@ Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/quick-menu-search
 
 ## 2023 Update
 
-Version 3.0.0 uses manifest MV3, which requires at least Firefox 109.0 (January 17, 2023).
+Version 3.0.0 uses manifest MV3, which requires at least Firefox 109.0 (January 17, 2023) or Chrome 88 (January 2021).
